@@ -6,7 +6,6 @@
  * @package  LoginTasks
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
- * @link     http://pear.horde.org/index.php?package=LoginTasks
  */
 
 /**
@@ -21,7 +20,6 @@
  * @package  LoginTasks
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
- * @link     http://pear.horde.org/index.php?package=LoginTasks
  */
 
 class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
