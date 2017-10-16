@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-03-21</date>
+ <date>2017-10-17</date>
  <version>
   <release>2.0.8</release>
   <api>1.0.0</api>
@@ -25,13 +25,6 @@
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <dir name="doc">
-    <dir name="Horde">
-     <dir name="LoginTasks">
-      <file name="COPYING" role="doc" />
-     </dir> <!-- /doc/Horde/LoginTasks -->
-    </dir> <!-- /doc/Horde -->
-   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Horde">
      <dir name="LoginTasks">
@@ -313,6 +306,7 @@
      </dir> <!-- /test/Horde/LoginTasks -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
+   <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -352,14 +346,13 @@
  </dependencies>
  <phprelease>
   <filelist>
-   <install as="COPYING" name="doc/Horde/LoginTasks/COPYING" />
    <install as="Horde/LoginTasks.php" name="lib/Horde/LoginTasks.php" />
    <install as="Horde/LoginTasks/Backend.php" name="lib/Horde/LoginTasks/Backend.php" />
    <install as="Horde/LoginTasks/SystemTask.php" name="lib/Horde/LoginTasks/SystemTask.php" />
    <install as="Horde/LoginTasks/Task.php" name="lib/Horde/LoginTasks/Task.php" />
    <install as="Horde/LoginTasks/Tasklist.php" name="lib/Horde/LoginTasks/Tasklist.php" />
    <install as="Horde/LoginTasks/Translation.php" name="lib/Horde/LoginTasks/Translation.php" />
-   <install as="locale/Horde_LoginTasks.pot" name="locale/Horde_LoginTasks.pot" />
+   <install as="LICENSE" name="LICENSE" />
    <install as="locale/ar/LC_MESSAGES/Horde_LoginTasks.mo" name="locale/ar/LC_MESSAGES/Horde_LoginTasks.mo" />
    <install as="locale/ar/LC_MESSAGES/Horde_LoginTasks.po" name="locale/ar/LC_MESSAGES/Horde_LoginTasks.po" />
    <install as="locale/bg/LC_MESSAGES/Horde_LoginTasks.mo" name="locale/bg/LC_MESSAGES/Horde_LoginTasks.mo" />
@@ -392,6 +385,7 @@
    <install as="locale/gl/LC_MESSAGES/Horde_LoginTasks.po" name="locale/gl/LC_MESSAGES/Horde_LoginTasks.po" />
    <install as="locale/he/LC_MESSAGES/Horde_LoginTasks.mo" name="locale/he/LC_MESSAGES/Horde_LoginTasks.mo" />
    <install as="locale/he/LC_MESSAGES/Horde_LoginTasks.po" name="locale/he/LC_MESSAGES/Horde_LoginTasks.po" />
+   <install as="locale/Horde_LoginTasks.pot" name="locale/Horde_LoginTasks.pot" />
    <install as="locale/hr/LC_MESSAGES/Horde_LoginTasks.mo" name="locale/hr/LC_MESSAGES/Horde_LoginTasks.mo" />
    <install as="locale/hr/LC_MESSAGES/Horde_LoginTasks.po" name="locale/hr/LC_MESSAGES/Horde_LoginTasks.po" />
    <install as="locale/hu/LC_MESSAGES/Horde_LoginTasks.mo" name="locale/hu/LC_MESSAGES/Horde_LoginTasks.mo" />
@@ -709,7 +703,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2016-03-21</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
