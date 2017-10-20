@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-20</date>
  <version>
   <release>2.0.8</release>
   <api>1.0.0</api>
@@ -301,7 +301,6 @@
       <file name="Autoload.php" role="test" />
       <file name="bootstrap.php" role="test" />
       <file name="LoginTasksTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
       <file name="Stubs.php" role="test" />
      </dir> <!-- /test/Horde/LoginTasks -->
     </dir> <!-- /test/Horde -->
@@ -442,7 +441,6 @@
    <install as="Horde/LoginTasks/Autoload.php" name="test/Horde/LoginTasks/Autoload.php" />
    <install as="Horde/LoginTasks/bootstrap.php" name="test/Horde/LoginTasks/bootstrap.php" />
    <install as="Horde/LoginTasks/LoginTasksTest.php" name="test/Horde/LoginTasks/LoginTasksTest.php" />
-   <install as="Horde/LoginTasks/phpunit.xml" name="test/Horde/LoginTasks/phpunit.xml" />
    <install as="Horde/LoginTasks/Stubs.php" name="test/Horde/LoginTasks/Stubs.php" />
   </filelist>
  </phprelease>
@@ -703,7 +701,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-20</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
