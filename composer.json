@@ -1,5 +1,5 @@
 {
-    "name": "horde/horde-logintasks",
+    "name": "horde/logintasks",
     "description": "Horde Login Tasks System",
     "type": "library",
     "homepage": "https://pear.horde.org",
@@ -21,11 +21,11 @@
     ],
     "require": {
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/Horde_Translation": "^2.2@stable"
+        "pear-pear.horde.org/Horde_Translation": "^2.2"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_Date": "^2@stable",
-        "pear-pear.horde.org/Horde_Test": "^2.1@stable"
+        "pear-pear.horde.org/Horde_Date": "^2",
+        "pear-pear.horde.org/Horde_Test": "^2.1"
     },
     "replace": {
         "pear-pear.horde.org/Horde_LoginTasks": "2.*",
