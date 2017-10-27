@@ -1,0 +1,136 @@
+----------
+v2.0.8-git
+----------
+
+
+------
+v2.0.7
+------
+
+[jan] Update Greek translation (Limperis Antonis <limperis@cti.gr>).
+
+
+------
+v2.0.6
+------
+
+[jan] Mark PHP 7 as supported.
+
+
+------
+v2.0.5
+------
+
+[jan] Updated DE translation.
+
+
+------
+v2.0.4
+------
+
+[jan] Improve PSR-2 compatibility.
+
+
+------
+v2.0.3
+------
+
+[mms] Only run shutdown task if the tasklist is currently incomplete.
+
+
+------
+v2.0.2
+------
+
+[jan] Update Basque translation (Ibon Igartua <ibon.igartua@ehu.es>).
+
+
+------
+v2.0.1
+------
+
+[jan] Update Dutch translation (Arjen de Korte <build+horde@de-korte.org>).
+
+
+------
+v2.0.0
+------
+
+First stable release for Horde 5.
+
+
+-----------
+v2.0.0beta1
+-----------
+
+First beta release for Horde 5.
+
+
+------------
+v2.0.0alpha1
+------------
+
+First alpha release for Horde 5.
+
+
+------
+v1.0.3
+------
+
+[mms] Fix advancing tasks pointer if system tasks also exist for an application
+      (Bug #9767).
+
+
+------
+v1.0.2
+------
+
+[mms] Prevent unnecessary URL redirection if no logintasks need to be
+      confirmed.
+
+
+------
+v1.0.1
+------
+
+[jan] Update Latvian translation.
+
+
+------
+v1.0.0
+------
+
+First stable release for Horde 4.
+
+
+---------
+v1.0.0RC2
+---------
+
+Second release candidate for Horde 4.
+
+
+---------
+v1.0.0RC1
+---------
+
+First release candidate for Horde 4.
+
+
+-----------
+v1.0.0beta1
+-----------
+
+First beta release for Horde 4.
+
+
+------------
+v1.0.0alpha1
+------------
+
+First alpha release for Horde 4.
+Add ability to dynamically skip system tasks.
+Removed horde/Core and horde/Util dependency.
+Added system tasks.
+Added ONCE interval.
+Renamed Maintenance:: -> Horde_LoginTasks::.
