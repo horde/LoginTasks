@@ -309,7 +309,6 @@
       <file name="Autoload.php" role="test" />
       <file name="bootstrap.php" role="test" />
       <file name="LoginTasksTest.php" role="test" />
-      <file name="phpunit.xml" role="test" />
       <file name="Stubs.php" role="test" />
      </dir> <!-- /test/Horde/LoginTasks -->
     </dir> <!-- /test/Horde -->
@@ -450,7 +449,6 @@
    <install as="Horde/LoginTasks/Autoload.php" name="test/Horde/LoginTasks/Autoload.php" />
    <install as="Horde/LoginTasks/bootstrap.php" name="test/Horde/LoginTasks/bootstrap.php" />
    <install as="Horde/LoginTasks/LoginTasksTest.php" name="test/Horde/LoginTasks/LoginTasksTest.php" />
-   <install as="Horde/LoginTasks/phpunit.xml" name="test/Horde/LoginTasks/phpunit.xml" />
    <install as="Horde/LoginTasks/Stubs.php" name="test/Horde/LoginTasks/Stubs.php" />
   </filelist>
  </phprelease>
