@@ -21,12 +21,12 @@
     ],
     "require": {
         "horde/horde-installer-plugin": "*",
-        "php": "^5.3 || ^7",
-        "horde/translation": "^2.2"
+        "php": "^7",
+        "horde/translation": "^3"
     },
     "suggest": {
-        "horde/date": "^2",
-        "horde/test": "^2.1"
+        "horde/date": "^3",
+        "horde/test": "^3"
     },
     "autoload": {
         "psr-0": {
