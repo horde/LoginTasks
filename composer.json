@@ -31,9 +31,6 @@
     "autoload": {
         "psr-0": {
             "Horde_LoginTasks": "lib/"
-        },
-        "psr-4": {
-            "Horde\\LoginTasks\\": "src/"
         }
     }
 }
