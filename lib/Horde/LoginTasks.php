@@ -115,15 +115,17 @@ class Horde_LoginTasks
             if (!$ob->active) {
                 continue;
             }
-
+            
             $addtask = false;
-
+            
             if ($ob->interval == self::FIRST_LOGIN) {
                 $addtask = empty($lasttask[$app]);
             } else {
-                $lastrun = getdate(empty($lasttask[$app])
-                    ? time()
-                    : $lasttask[$app]);
+                if (empty($lasttask[$app])) {
+                    $lasttask[$app] = time();
+                    $this->_backend->setLastRun($lasttask);
+                }
+                $lastrun = getdate($lasttask[$app]);
 
                 switch ($ob->interval) {
                 case self::YEARLY:
