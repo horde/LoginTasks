@@ -22,7 +22,7 @@
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
 
-class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
+class Horde_LoginTasks_LoginTasksTest extends Horde_Test_Case
 {
     public function testTheTasksAreRun()
     {
@@ -315,7 +315,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
                 'Horde_LoginTasks_Stub_Notice',
             )
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'URL',
             (string) $tasks->runTasks()
         );
@@ -404,7 +404,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
             'url' => 'redirect'
         ));
         $tasks->displayTasks();
-        $this->assertContains(
+        $this->assertStringContainsString(
             'URL',
             (string) $tasks->runTasks(array('user_confirmed' => true))
         );
@@ -433,7 +433,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
                 'Horde_LoginTasks_Stub_NoticeTwo',
             )
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'URL',
             (string) $tasks->runTasks(array('url' => 'redirect'))
         );
@@ -455,7 +455,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
             ),
             $classes
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'URL',
             (string) $tasks->runTasks(array(
                 'confirmed' => array(
@@ -496,7 +496,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
             ),
             $classes
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'URL',
             (string) $tasks->runTasks(array('user_confirmed' => true))
         );
@@ -521,7 +521,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
             ),
             $classes
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'URL',
             (string) $tasks->runTasks(array(
                 'confirmed' => array(
@@ -553,7 +553,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
             ),
             $classes
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'URL',
             (string) $tasks->runTasks(array(
                 'confirmed' => array(
@@ -586,7 +586,7 @@ class Horde_LoginTasks_LoginTasksTest extends PHPUnit_Framework_TestCase
             ),
             $classes
         );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'redirect',
             (string) $tasks->runTasks(array('user_confirmed' => true))
         );
