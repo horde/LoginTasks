@@ -13,23 +13,15 @@
     ],
     "version": "2.0.8",
     "time": "2017-11-11",
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "https://pear.horde.org"
-        }
-    ],
     "require": {
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/Horde_Translation": "^2.2"
+        "horde/translation": "^2.2"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_Date": "^2",
-        "pear-pear.horde.org/Horde_Test": "^2.1"
+        "horde/date": "^2",
+        "horde/test": "^2.1"
     },
     "replace": {
-        "pear-pear.horde.org/Horde_LoginTasks": "2.*",
-        "pear-horde/Horde_LoginTasks": "2.*"
     },
     "autoload": {
         "psr-0": {
