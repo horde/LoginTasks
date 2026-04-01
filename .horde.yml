@@ -24,10 +24,13 @@ license:
   uri: http://www.horde.org/licenses/lgpl21
 dependencies:
   required:
-    php: ^7.4 || ^8
+    php: ^8
     composer:
       horde/translation: ^3
   optional:
     composer:
       horde/date: ^3
-      horde/test: ^3
+keywords:
+  - upgrade
+  - housekeeping
+vendor: horde
