@@ -1,10 +1,11 @@
 <?php
+
 /**
  * The Horde_LoginTasks_Backend:: class provides the specific backend providing
  * the dependencies of the LoginTasks system (e.g. preferences, session storage,
  * redirection facilites, shutdown management etc.)
  *
- * Copyright 2001-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2001-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.

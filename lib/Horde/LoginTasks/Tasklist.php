@@ -1,9 +1,10 @@
 <?php
+
 /**
  * The Horde_LoginTasks_Tasklist:: class is used to store the list of
  * login tasks that need to be run during this login.
  *
- * Copyright 2002-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2002-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -40,7 +41,7 @@ class Horde_LoginTasks_Tasklist
      *
      * @var array
      */
-    protected $_tasks = array();
+    protected $_tasks = [];
 
     /**
      * The list of system tasks to run during this login.
@@ -49,7 +50,7 @@ class Horde_LoginTasks_Tasklist
      *
      * @var array
      */
-    protected $_stasks = array();
+    protected $_stasks = [];
 
     /**
      * Current task location pointer.
@@ -69,13 +70,13 @@ class Horde_LoginTasks_Tasklist
             $this->_stasks[] = $task;
         } else {
             switch ($task->priority) {
-            case Horde_LoginTasks::PRIORITY_HIGH:
-                array_unshift($this->_tasks, $task);
-                break;
+                case Horde_LoginTasks::PRIORITY_HIGH:
+                    array_unshift($this->_tasks, $task);
+                    break;
 
-            case Horde_LoginTasks::PRIORITY_NORMAL:
-                $this->_tasks[] = $task;
-                break;
+                case Horde_LoginTasks::PRIORITY_NORMAL:
+                    $this->_tasks[] = $task;
+                    break;
             }
         }
     }
@@ -89,7 +90,7 @@ class Horde_LoginTasks_Tasklist
      */
     public function ready($advance = false)
     {
-        $stasks = $tasks = array();
+        $stasks = $tasks = [];
 
         /* Always loop through system tasks first. */
         foreach ($this->_stasks as $key => $val) {
@@ -123,12 +124,12 @@ class Horde_LoginTasks_Tasklist
      */
     public function needDisplay($advance = false)
     {
-        $tmp = array();
+        $tmp = [];
         $previous = null;
 
         foreach ($this->_tasks as $v) {
-            if (!$v->needsDisplay() ||
-                (!is_null($previous) && !$v->joinDisplayWith($previous))) {
+            if (!$v->needsDisplay()
+                || (!is_null($previous) && !$v->joinDisplayWith($previous))) {
                 break;
             }
             $tmp[] = $v;
@@ -149,8 +150,8 @@ class Horde_LoginTasks_Tasklist
      */
     public function isDone()
     {
-        return (empty($this->_stasks) &&
-                ($this->_ptr == count($this->_tasks)));
+        return (empty($this->_stasks)
+                && ($this->_ptr == count($this->_tasks)));
     }
 
 }
