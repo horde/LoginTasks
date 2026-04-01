@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Abstract class to allow for modularization of specific login tasks.
  *
- * Copyright 2001-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2001-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -105,9 +106,9 @@ abstract class Horde_LoginTasks_Task
      */
     public function joinDisplayWith(Horde_LoginTasks_Task $previous)
     {
-        return (($this->display == $previous->display) ||
-                ($this->_isConfirmTask($this) &&
-                 $this->_isConfirmTask($previous)));
+        return (($this->display == $previous->display)
+                || ($this->_isConfirmTask($this)
+                 && $this->_isConfirmTask($previous)));
     }
 
     /**
@@ -121,8 +122,8 @@ abstract class Horde_LoginTasks_Task
     {
         return in_array(
             $task->display,
-            array(Horde_LoginTasks::DISPLAY_CONFIRM_YES,
-                  Horde_LoginTasks::DISPLAY_CONFIRM_NO)
+            [Horde_LoginTasks::DISPLAY_CONFIRM_YES,
+                Horde_LoginTasks::DISPLAY_CONFIRM_NO]
         );
     }
 
