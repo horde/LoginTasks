@@ -23,10 +23,11 @@
         "php": "^7.4 || ^8",
         "horde/translation": "^3 || dev-FRAMEWORK_6_0"
     },
-    "require-dev": {},
+    "require-dev": {
+        "horde/date": "^3 || dev-FRAMEWORK_6_0"
+    },
     "suggest": {
-        "horde/date": "^3 || dev-FRAMEWORK_6_0",
-        "horde/test": "^3 || dev-FRAMEWORK_6_0"
+        "horde/date": "^3 || dev-FRAMEWORK_6_0"
     },
     "autoload": {
         "psr-0": {
@@ -36,6 +37,9 @@
     "autoload-dev": {
         "psr-4": {
             "Horde\\LoginTasks\\Test\\": "test/"
-        }
+        },
+        "files": [
+            "test/Horde/LoginTasks/Stubs.php"
+        ]
     }
 }

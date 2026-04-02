@@ -43,6 +43,9 @@ class Horde_LoginTasks_Stub_Backend extends Horde_LoginTasks_Backend
     public function markLastRun()
     {
         $lasttasks = $this->getLastRun();
+        if ($lasttasks === false || !is_array($lasttasks)) {
+            $lasttasks = [];
+        }
         $lasttasks['test'] = time();
         self::$lastRun = $lasttasks;
     }

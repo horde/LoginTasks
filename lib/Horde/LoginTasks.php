@@ -105,6 +105,9 @@ class Horde_LoginTasks
          * last run timestamps. Special key '_once' contains list of
          * ONCE tasks previously run. */
         $lasttask = $this->_backend->getLastRun();
+        if ($lasttask === false || !is_array($lasttask)) {
+            $lasttask = [];
+        }
 
         /* Create time objects for today's date and last task run date. */
         $cur_date = getdate();
