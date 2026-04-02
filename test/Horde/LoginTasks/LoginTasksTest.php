@@ -14,8 +14,10 @@ namespace Horde\LoginTasks;
 use Horde_Date;
 use Horde_LoginTasks;
 use Horde_LoginTasks_Stub_Backend;
+use Horde_LoginTasks_Stub_Backend_ThrowsOnStore;
 use Horde_LoginTasks_Stub_First;
 use Horde_LoginTasks_Stub_Once;
+use Horde_LoginTasks_Stub_SystemTask_Skip;
 use Horde_LoginTasks_Stub_Task;
 use Horde_LoginTasks_Task;
 use Horde_LoginTasks_Tasklist;
@@ -619,6 +621,109 @@ class LoginTasksTest extends TestCase
                 'Horde_LoginTasks_Stub_NoticeTwo',
             ],
             Horde_LoginTasks_Stub_Task::$executed
+        );
+    }
+
+    public function testGetLabelsReturnsTranslatedIntervalNames()
+    {
+        $labels = Horde_LoginTasks::getLabels();
+
+        $this->assertIsArray($labels);
+        $this->assertArrayHasKey(Horde_LoginTasks::YEARLY, $labels);
+        $this->assertArrayHasKey(Horde_LoginTasks::MONTHLY, $labels);
+        $this->assertArrayHasKey(Horde_LoginTasks::WEEKLY, $labels);
+        $this->assertArrayHasKey(Horde_LoginTasks::DAILY, $labels);
+        $this->assertArrayHasKey(Horde_LoginTasks::EVERY, $labels);
+        $this->assertCount(5, $labels);
+    }
+
+    public function testGetLoginTasksUrlDelegatesToBackend()
+    {
+        $tasks = $this->_getLoginTasks();
+        $url = $tasks->getLoginTasksUrl();
+
+        $this->assertEquals('URL', $url);
+    }
+
+    public function testShutdownStoresTasklistInCache()
+    {
+        $tasks = $this->_getLoginTasks(['Horde_LoginTasks_Stub_Task']);
+
+        // Trigger shutdown directly
+        $tasks->shutdown();
+
+        // Verify the backend received the tasklist
+        $this->assertNotNull(Horde_LoginTasks_Stub_Backend::$lastTasklistCache);
+    }
+
+    public function testShutdownHandlesExceptionSilently()
+    {
+        $backend = new Horde_LoginTasks_Stub_Backend_ThrowsOnStore(
+            ['Horde_LoginTasks_Stub_Task' => 'test'],
+            false
+        );
+        $tasks = new Horde_LoginTasks($backend);
+
+        // Should not throw exception
+        $tasks->shutdown();
+
+        // If we get here, exception was caught
+        $this->assertTrue(true);
+    }
+
+    public function testSystemTasksAreAlwaysExecutedFirst()
+    {
+        Horde_LoginTasks_Stub_Task::$executed = [];
+        $tasks = $this->_getLoginTasks(
+            [
+                'Horde_LoginTasks_Stub_Task',
+                'Horde_LoginTasks_Stub_SystemTask',
+                'Horde_LoginTasks_Stub_High',
+            ]
+        );
+        $tasks->runTasks();
+
+        $this->assertEquals(
+            'Horde_LoginTasks_Stub_SystemTask',
+            Horde_LoginTasks_Stub_Task::$executed[0]
+        );
+    }
+
+    public function testSystemTaskWithSkipIsNotExecutedButIsRetried()
+    {
+        Horde_LoginTasks_Stub_Task::$executed = [];
+        Horde_LoginTasks_Stub_SystemTask_Skip::$shouldSkip = true;
+
+        $tasks = $this->_getLoginTasks(
+            [
+                'Horde_LoginTasks_Stub_SystemTask_Skip',
+                'Horde_LoginTasks_Stub_Task',
+            ]
+        );
+        $tasks->runTasks();
+
+        // SystemTask was skipped, only regular task ran
+        $this->assertEquals(
+            ['Horde_LoginTasks_Stub_Task'],
+            Horde_LoginTasks_Stub_Task::$executed
+        );
+
+        // Try again with skip disabled
+        Horde_LoginTasks_Stub_Task::$executed = [];
+        Horde_LoginTasks_Stub_SystemTask_Skip::$shouldSkip = false;
+
+        $tasks2 = $this->_getLoginTasks(
+            [
+                'Horde_LoginTasks_Stub_SystemTask_Skip',
+                'Horde_LoginTasks_Stub_Task',
+            ]
+        );
+        $tasks2->runTasks();
+
+        // Now SystemTask should execute
+        $this->assertEquals(
+            'Horde_LoginTasks_Stub_SystemTask_Skip',
+            Horde_LoginTasks_Stub_Task::$executed[0]
         );
     }
 

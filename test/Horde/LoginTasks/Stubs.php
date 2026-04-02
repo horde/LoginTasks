@@ -3,6 +3,7 @@
 class Horde_LoginTasks_Stub_Backend extends Horde_LoginTasks_Backend
 {
     public static $lastRun;
+    public static $lastTasklistCache;
 
     private $_tasklist;
     private $_tasklistCache = false;
@@ -23,6 +24,7 @@ class Horde_LoginTasks_Stub_Backend extends Horde_LoginTasks_Backend
     public function storeTasklistInCache($tasklist)
     {
         $this->_tasklistCache = $tasklist;
+        self::$lastTasklistCache = $tasklist;
     }
 
     public function getTasks()
@@ -48,6 +50,58 @@ class Horde_LoginTasks_Stub_Backend extends Horde_LoginTasks_Backend
         }
         $lasttasks['test'] = time();
         self::$lastRun = $lasttasks;
+    }
+
+    public function redirect($url)
+    {
+        return $url;
+    }
+
+    public function getLoginTasksUrl()
+    {
+        return 'URL';
+    }
+}
+
+class Horde_LoginTasks_Stub_Backend_ThrowsOnStore extends Horde_LoginTasks_Backend
+{
+    private $_tasklist;
+    private $_lastRun;
+
+    public function __construct(array $tasks, $last_run = false)
+    {
+        $this->_tasklist = $tasks;
+        $this->_lastRun = $last_run;
+    }
+
+    public function getTasklistFromCache()
+    {
+        return false;
+    }
+
+    public function storeTasklistInCache($tasklist)
+    {
+        throw new Horde_Exception('Storage failed');
+    }
+
+    public function getTasks()
+    {
+        return $this->_tasklist;
+    }
+
+    public function getLastRun()
+    {
+        return $this->_lastRun;
+    }
+
+    public function setLastRun(array $last)
+    {
+        $this->_lastRun = $last;
+    }
+
+    public function markLastRun()
+    {
+        $this->_lastRun = ['test' => time()];
     }
 
     public function redirect($url)
@@ -140,4 +194,27 @@ class Horde_LoginTasks_Stub_Week extends Horde_LoginTasks_Stub_Task
 class Horde_LoginTasks_Stub_Year extends Horde_LoginTasks_Stub_Task
 {
     public $interval = Horde_LoginTasks::YEARLY;
+}
+
+class Horde_LoginTasks_Stub_SystemTask extends Horde_LoginTasks_SystemTask
+{
+    public function execute()
+    {
+        Horde_LoginTasks_Stub_Task::$executed[] = get_class($this);
+    }
+}
+
+class Horde_LoginTasks_Stub_SystemTask_Skip extends Horde_LoginTasks_SystemTask
+{
+    public static $shouldSkip = false;
+
+    public function execute()
+    {
+        Horde_LoginTasks_Stub_Task::$executed[] = get_class($this);
+    }
+
+    public function skip()
+    {
+        return self::$shouldSkip;
+    }
 }
