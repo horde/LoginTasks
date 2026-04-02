@@ -21,7 +21,10 @@
     ],
     "require": {
         "php": "^7.4 || ^8",
-        "horde/translation": "^3 || dev-FRAMEWORK_6_0"
+        "horde/translation": "^3 || dev-FRAMEWORK_6_0",
+        "horde/http": "^3 || dev-FRAMEWORK_6_0",
+        "horde/exception": "^3 || dev-FRAMEWORK_6_0",
+        "psr/http-message": "^1.0 || ^2.0"
     },
     "require-dev": {
         "horde/date": "^3 || dev-FRAMEWORK_6_0"
@@ -32,6 +35,9 @@
     "autoload": {
         "psr-0": {
             "Horde_LoginTasks": "lib/"
+        },
+        "psr-4": {
+            "Horde\\LoginTasks\\": "src/"
         }
     },
     "autoload-dev": {

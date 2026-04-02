@@ -14,6 +14,10 @@
 
   <testsuites>
     <testsuite name="unit">
+      <directory>test/unit</directory>
+      <exclude>test/unit/Stubs.php</exclude>
+    </testsuite>
+    <testsuite name="legacy">
       <directory>test/Horde/LoginTasks</directory>
       <exclude>test/Horde/LoginTasks/Stubs.php</exclude>
     </testsuite>
@@ -22,6 +26,7 @@
   <source>
     <include>
       <directory suffix=".php">lib</directory>
+      <directory suffix=".php">src</directory>
     </include>
     <exclude>
       <file>lib/Horde/LoginTasks/Translation.php</file>
