@@ -11,13 +11,16 @@
 
 namespace Horde\LoginTasks;
 
-use PHPUnit\Framework\TestCase;
-use Horde_LoginTasks_Stub_Task;
+use Horde_Date;
 use Horde_LoginTasks;
 use Horde_LoginTasks_Stub_Backend;
-use Horde_Date;
 use Horde_LoginTasks_Stub_First;
 use Horde_LoginTasks_Stub_Once;
+use Horde_LoginTasks_Stub_Task;
+use Horde_LoginTasks_Task;
+use Horde_LoginTasks_Tasklist;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the LoginTasks class.
@@ -31,9 +34,11 @@ use Horde_LoginTasks_Stub_Once;
  * @package  LoginTasks
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
- * @coversNothing
  */
 
+#[CoversClass(Horde_LoginTasks::class)]
+#[CoversClass(Horde_LoginTasks_Tasklist::class)]
+#[CoversClass(Horde_LoginTasks_Task::class)]
 class LoginTasksTest extends TestCase
 {
     public function testTheTasksAreRun()
