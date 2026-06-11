@@ -62,9 +62,30 @@ class Horde_LoginTasks
      * Constructor.
      *
      * @param Horde_LoginTasks_Backend $backend  The backend to use.
+     * @param bool $registerShutdown             Whether to register a PHP
+     *                                           shutdown handler that
+     *                                           persists the tasklist via
+     *                                           the backend at request end.
+     *                                           Default true preserves the
+     *                                           historical behavior of this
+     *                                           class. Frameworks that own
+     *                                           their own end-of-request
+     *                                           coordination (e.g. Horde\Core
+     *                                           via Horde_Shutdown_Task)
+     *                                           should pass false and
+     *                                           arrange the persist call
+     *                                           themselves; otherwise the
+     *                                           library's
+     *                                           register_shutdown_function
+     *                                           callback fires after the
+     *                                           framework's own shutdown
+     *                                           coordinator and any session
+     *                                           writes it makes are dropped.
      */
-    public function __construct(Horde_LoginTasks_Backend $backend)
-    {
+    public function __construct(
+        Horde_LoginTasks_Backend $backend,
+        bool $registerShutdown = true
+    ) {
         $this->_backend = $backend;
 
         /* Retrieves a cached tasklist or make sure one is created. */
@@ -74,7 +95,7 @@ class Horde_LoginTasks
             $this->_createTaskList();
         }
 
-        if ($this->_tasklist !== true) {
+        if ($registerShutdown && $this->_tasklist !== true) {
             register_shutdown_function([$this, 'shutdown']);
         }
     }
