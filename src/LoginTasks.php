@@ -42,16 +42,25 @@ class LoginTasks
             $this->tasklist = $this->createTaskList();
         }
 
-        // Register shutdown handler
-        if ($this->tasklist !== true) {
-            register_shutdown_function([$this, 'shutdown']);
-        }
+        // Note: this class deliberately does NOT register a PHP shutdown
+        // handler. The legacy Horde_LoginTasks class still does (gated on
+        // its $registerShutdown constructor flag) for back-compat with
+        // out-of-tree consumers, but persistence timing is a framework
+        // concern and modern callers own it: invoke {@see persist()}
+        // explicitly when the tasklist's final state should be written
+        // back to the backend (or wrap the instance in a framework-side
+        // shutdown adapter that does the same).
     }
 
     /**
-     * Store tasklist in cache on shutdown
+     * Persist the current tasklist via the backend.
+     *
+     * Replaces the legacy `shutdown()` method. Callers decide when to
+     * invoke this — typically once after {@see runTasks()} has finished
+     * processing, or via a framework-owned adapter that fires it at
+     * end of request.
      */
-    public function shutdown(): void
+    public function persist(): void
     {
         if (!isset($this->tasklist)) {
             return;

@@ -490,15 +490,15 @@ class LoginTasksTest extends TestCase
         $this->assertEquals('/login/tasks', (string) $url);
     }
 
-    public function testShutdownStoresTasklistInCache(): void
+    public function testPersistStoresTasklistInCache(): void
     {
         $tasks = $this->getLoginTasks([new TestTask()]);
-        $tasks->shutdown();
+        $tasks->persist();
 
         $this->assertNotNull(Backend::$lastTasklistCache);
     }
 
-    public function testShutdownHandlesExceptionSilently(): void
+    public function testPersistHandlesExceptionSilently(): void
     {
         $backend = new BackendThrowsOnStore(
             [new TestTask()],
@@ -507,7 +507,7 @@ class LoginTasksTest extends TestCase
         $tasks = new LoginTasks($backend);
 
         // Should not throw
-        $tasks->shutdown();
+        $tasks->persist();
         $this->assertTrue(true);
     }
 
