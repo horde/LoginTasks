@@ -1,126 +1,14 @@
 ---
-3.0.0alpha5:
-  api: 3.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2022-04-05
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |+
-3.0.0alpha4:
-  api: 3.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2022-04-05
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |+
-3.0.0alpha3:
-  api: 3.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2021-03-13
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |+
-3.0.0alpha2:
-  api: 3.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2021-02-24
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |+
-3.0.0alpha1:
-  api: 3.0.0alpha1
+3.0.0:
+  api: 3.0.0
   state:
     release: stable
     api: stable
-  date: 2021-02-24
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Update Turkish translations.
-    [jan] Remove usage of each().
-3.0.0-beta1:
-  api: 3.0.0-beta1
-  state:
-    release: beta
-    api: beta
-  date: 2026-04-02
+  date: 2026-06-27
   license:
     identifier: LGPL-2.1-only
     uri: https://spdx.org/licenses/LGPL-2.1-only.html
-  notes: |-
-    feat: PSR-4 src/ implementation with some modernizations.
-    test: Expand coverage
-    test: Formal modernization of unit test suite for PHPUnit 11-13
-    chores: Update metadata
-    style: php-cs-fixer
-    Development mode for LoginTasks-3.0.0alpha5
-    Released LoginTasks-3.0.0alpha4
-    added release workflow
-    set last_logintasks if it does not exist for app
-    Update metadata and workflows for PHP 8 support
-    Add CI job for satis repo update
-    no errors, ci.yml added, bootstrap.php adapted
-    no errors left
-    Development mode for LoginTasks-3.0.0alpha5
-    Released LoginTasks-3.0.0alpha3
-    Development mode for LoginTasks-3.0.0alpha4
-    Released LoginTasks-3.0.0alpha2
-    Development mode for LoginTasks-3.0.0alpha3
-    Released LoginTasks-3.0.0alpha1
-    Components updated the package files.
-    [jan] Update Turkish translations.
-    [jan] Remove usage of each().
-    Update supported PHP versions and configuration names.
-    Standardize descriptions.
-    Enable PHP 7.3 CI.
-    Update package definitions.
-    Fix getting exit code on PHP 7.2+.
-    Mark Chuck and Michael as inactive.
-    package.xml must not contain empty <notes> tags.
-    Create CHANGES for all components.
-    Regenerate package.xml from changelog.yml.
-    Build changelog.yml from existing changelog(s).
-    Update .horde.yml with extended information.
-    Update composer.json.
-    Enable 7.2 builds.
-    PEAR on 5.6 and 7.0 is fixed.
-    Update file list
-    Move phpunit configuration to base directory.
-    Update references to COPYING files.
-    Use LICENSE consistently and move to base directory.
-    Stop flooding #horde channel.
-    Use https URLs.
-    Remove incorrect links.
-    Install all dependencies but PECL extensions.
-    Hopefully this finally fixes Travis builds now.
-    Always discover channel manually, due to Travis bug.
-    Fix Travis tests.
-    Add Travis configuration and .gitignore files.
-    Update Turkish translations.
-    Update tr translation.
-    Add type parameter to .horde.yml files.
-    Update composer information.
-    Updated composer definitions.
-    Rename horde.yml files.
-    Don't use each().
-    Standardize library full names.
-    Generate horde.yml files for all components.
-    Happy New Year!
-    Use HTTPS.
-    Development mode for Horde_LoginTasks-2.0.8
+  notes: 'chore: refresh qc fixes and platform deps'
 3.0.0-RC1:
   api: 3.0.0-RC1
   state:
@@ -130,10 +18,67 @@
   license:
     identifier: LGPL-2.1-only
     uri: https://spdx.org/licenses/LGPL-2.1-only.html
-  notes: |-
-    feat: Add opt-out to registering for request shutdown
-    docs: Add UPGRADING.md for transitioning from lib/ to src/
-    chore: Update workflow dependency
+  notes: "feat: Add opt-out to registering for request shutdown\ndocs: Add UPGRADING.md for transitioning from lib/ to src/\nchore: Update workflow dependency"
+3.0.0-beta1:
+  api: 3.0.0-beta1
+  state:
+    release: beta
+    api: beta
+  date: 2026-04-02
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: "feat: PSR-4 src/ implementation with some modernizations.\ntest: Expand coverage\ntest: Formal modernization of unit test suite for PHPUnit 11-13\nchores: Update metadata\nstyle: php-cs-fixer\nDevelopment mode for LoginTasks-3.0.0alpha5\nReleased LoginTasks-3.0.0alpha4\nadded release workflow\nset last_logintasks if it does not exist for app\nUpdate metadata and workflows for PHP 8 support\nAdd CI job for satis repo update\nno errors, ci.yml added, bootstrap.php adapted\nno errors left\nDevelopment mode for LoginTasks-3.0.0alpha5\nReleased LoginTasks-3.0.0alpha3\nDevelopment mode for LoginTasks-3.0.0alpha4\nReleased LoginTasks-3.0.0alpha2\nDevelopment mode for LoginTasks-3.0.0alpha3\nReleased LoginTasks-3.0.0alpha1\nComponents updated the package files.\n[jan] Update Turkish translations.\n[jan] Remove usage of each().\nUpdate supported PHP versions and configuration names.\nStandardize descriptions.\nEnable PHP 7.3 CI.\nUpdate package definitions.\nFix getting exit code on PHP 7.2+.\nMark Chuck and Michael as inactive.\npackage.xml must not contain empty <notes> tags.\nCreate CHANGES for all components.\nRegenerate package.xml from changelog.yml.\nBuild changelog.yml from existing changelog(s).\nUpdate .horde.yml with extended information.\nUpdate composer.json.\nEnable 7.2 builds.\nPEAR on 5.6 and 7.0 is fixed.\nUpdate file list\nMove phpunit configuration to base directory.\nUpdate references to COPYING files.\nUse LICENSE consistently and move to base directory.\nStop flooding #horde channel.\nUse https URLs.\nRemove incorrect links.\nInstall all dependencies but PECL extensions.\nHopefully this finally fixes Travis builds now.\nAlways discover channel manually, due to Travis bug.\nFix Travis tests.\nAdd Travis configuration and .gitignore files.\nUpdate Turkish translations.\nUpdate tr translation.\nAdd type parameter to .horde.yml files.\nUpdate composer information.\nUpdated composer definitions.\nRename horde.yml files.\nDon't use each().\nStandardize library full names.\nGenerate horde.yml files for all components.\nHappy New Year!\nUse HTTPS.\nDevelopment mode for Horde_LoginTasks-2.0.8"
+3.0.0alpha5:
+  api: 3.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2022-04-05
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: ''
+3.0.0alpha4:
+  api: 3.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2022-04-05
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: ''
+3.0.0alpha3:
+  api: 3.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2021-03-13
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: ''
+3.0.0alpha2:
+  api: 3.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2021-02-24
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: ''
+3.0.0alpha1:
+  api: 3.0.0alpha1
+  state:
+    release: stable
+    api: stable
+  date: 2021-02-24
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "[jan] Update Turkish translations.\n[jan] Remove usage of each().\n"
 2.0.7:
   api: 1.0.0
   state:
@@ -143,8 +88,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Update Greek translation (Limperis Antonis <limperis@cti.gr>).
+  notes: "[jan] Update Greek translation (Limperis Antonis <limperis@cti.gr>).\n"
 2.0.6:
   api: 1.0.0
   state:
@@ -154,8 +98,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Mark PHP 7 as supported.
+  notes: "[jan] Mark PHP 7 as supported.\n"
 2.0.5:
   api: 1.0.0
   state:
@@ -165,8 +108,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Updated DE translation.
+  notes: "[jan] Updated DE translation.\n"
 2.0.4:
   api: 1.0.0
   state:
@@ -176,8 +118,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Improve PSR-2 compatibility.
+  notes: "[jan] Improve PSR-2 compatibility.\n"
 2.0.3:
   api: 1.0.0
   state:
@@ -187,8 +128,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [mms] Only run shutdown task if the tasklist is currently incomplete.
+  notes: "[mms] Only run shutdown task if the tasklist is currently incomplete.\n"
 2.0.2:
   api: 1.0.0
   state:
@@ -198,8 +138,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Update Basque translation (Ibon Igartua <ibon.igartua@ehu.es>).
+  notes: "[jan] Update Basque translation (Ibon Igartua <ibon.igartua@ehu.es>).\n"
 2.0.1:
   api: 1.0.0
   state:
@@ -209,30 +148,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Update Dutch translation (Arjen de Korte <build+horde@de-korte.org>).
-2.0.0beta1:
-  api: 1.0.0
-  state:
-    release: beta
-    api: stable
-  date: 2012-07-19
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First beta release for Horde 5.
-2.0.0alpha1:
-  api: 1.0.0
-  state:
-    release: alpha
-    api: stable
-  date: 2012-07-05
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First alpha release for Horde 5.
+  notes: "[jan] Update Dutch translation (Arjen de Korte <build+horde@de-korte.org>).\n"
 2.0.0:
   api: 1.0.0
   state:
@@ -242,8 +158,27 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First stable release for Horde 5.
+  notes: "First stable release for Horde 5.\n"
+2.0.0beta1:
+  api: 1.0.0
+  state:
+    release: beta
+    api: stable
+  date: 2012-07-19
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "First beta release for Horde 5.\n"
+2.0.0alpha1:
+  api: 1.0.0
+  state:
+    release: alpha
+    api: stable
+  date: 2012-07-05
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "First alpha release for Horde 5.\n"
 1.0.3:
   api: 1.0.0
   state:
@@ -253,8 +188,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [mms] Fix advancing tasks pointer if system tasks also exist for an application (Bug #9767).
+  notes: "[mms] Fix advancing tasks pointer if system tasks also exist for an application (Bug #9767).\n"
 1.0.2:
   api: 1.0.0
   state:
@@ -264,8 +198,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [mms] Prevent unnecessary URL redirection if no logintasks need to be confirmed.
+  notes: "[mms] Prevent unnecessary URL redirection if no logintasks need to be confirmed.\n"
 1.0.1:
   api: 1.0.0
   state:
@@ -275,57 +208,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Update Latvian translation.
-1.0.0beta1:
-  api: 1.0.0
-  state:
-    release: beta
-    api: beta
-  date: 2011-03-16
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First beta release for Horde 4.
-1.0.0alpha1:
-  api: 1.0.0
-  state:
-    release: alpha
-    api: alpha
-  date: 2011-03-08
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First alpha release for Horde 4.
-    Add ability to dynamically skip system tasks.
-    Removed horde/Core and horde/Util dependency.
-    Added system tasks.
-    Added ONCE interval.
-    Renamed Maintenance:: -> Horde_LoginTasks::.
-1.0.0RC2:
-  api: 1.0.0
-  state:
-    release: beta
-    api: beta
-  date: 2011-03-29
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    Second release candidate for Horde 4.
-1.0.0RC1:
-  api: 1.0.0
-  state:
-    release: beta
-    api: beta
-  date: 2011-03-22
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First release candidate for Horde 4.
+  notes: "[jan] Update Latvian translation.\n"
 1.0.0:
   api: 1.0.0
   state:
@@ -335,5 +218,44 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First stable release for Horde 4.
+  notes: "First stable release for Horde 4.\n"
+1.0.0RC2:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2011-03-29
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "Second release candidate for Horde 4.\n"
+1.0.0RC1:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2011-03-22
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "First release candidate for Horde 4.\n"
+1.0.0beta1:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2011-03-16
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "First beta release for Horde 4.\n"
+1.0.0alpha1:
+  api: 1.0.0
+  state:
+    release: alpha
+    api: alpha
+  date: 2011-03-08
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "First alpha release for Horde 4.\nAdd ability to dynamically skip system tasks.\nRemoved horde/Core and horde/Util dependency.\nAdded system tasks.\nAdded ONCE interval.\nRenamed Maintenance:: -> Horde_LoginTasks::.\n"

@@ -15,7 +15,7 @@
         "upgrade",
         "housekeeping"
     ],
-    "time": "2026-06-11",
+    "time": "2026-06-27",
     "repositories": [],
     "require": {
         "php": "^8",
